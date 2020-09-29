@@ -14,7 +14,9 @@ class AddPhotoIdToUsers extends Migration
     {
         Schema::table('Users', function (Blueprint $table) {
             //
-            $table->string('photo_id');
+            $table->increament('id');
+            $table->string('file');
+            $table->timestamp();
         });
     }
 
