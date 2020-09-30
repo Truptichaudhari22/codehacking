@@ -57,6 +57,7 @@ class AdminUserscontroller extends Controller
         }
             //  $input['password'] = [$request
              User::create($input);
+             return redirect('/admin/users');
         
     }
 
@@ -81,7 +82,11 @@ class AdminUserscontroller extends Controller
     public function edit($id)
     {
         //
-        return view('users.edit');
+        $user = User::findOrFail($id);
+
+        $roles = Role::lists('name','id')->all();
+        
+        return view('admin.users.edit',compact('user','roles'));
     }
 
     /**
@@ -94,6 +99,7 @@ class AdminUserscontroller extends Controller
     public function update(Request $request, $id)
     {
         //
+        return $request->all();
     }
 
     /**

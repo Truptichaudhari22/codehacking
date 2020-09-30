@@ -27,3 +27,4 @@ Route::get('/user','AdminUsersController@index');
 Route::get('/user/create','AdminUsersController@create');
 
 Route::resource('/admin/user','AdminUsersController');
+Route::get('/user/{id}/edit', [ 'as' => 'admin.users.edit', 'uses' => 'AdminUsersController@edit']);
