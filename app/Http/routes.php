@@ -25,6 +25,13 @@ Route::get('/admin',function(){
 
 Route::get('/user','AdminUsersController@index');
 Route::get('/user/create','AdminUsersController@create');
+// Route::group(['middleware'=>Admin], function(){
 
 Route::resource('/admin/user','AdminUsersController');
-Route::get('/user/{id}/edit', [ 'as' => 'admin.users.edit', 'uses' => 'AdminUsersController@edit']);
+
+// });
+// Route::get('/user/{id}/edit', [ 'as' => 'admin.users.edit', 'uses' => 'AdminUsersController@edit']);
+
+Route::resource('/admin/posts','AdminPostController');
+
+// Route::get('/posts','AdminPostController@index');

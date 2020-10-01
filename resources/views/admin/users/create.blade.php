@@ -42,5 +42,11 @@
 </div>
 {!! Form::close() !!}
 
+<div class="form-group">
+{!! Form::submit('delete User',['class'=>'btn btn-danger']) !!}
+</div>
+{!! Form::close() !!}
+
+
 @include('includes.form_error')
 @endsection
