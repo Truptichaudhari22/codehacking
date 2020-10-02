@@ -10,6 +10,7 @@ use App\Post;
 use App\User;
 use Auth;
 use App\Photo;
+use App\Category;
 
 class AdminPostController extends Controller
 {
@@ -33,7 +34,9 @@ class AdminPostController extends Controller
     public function create()
     {
         //
-        return view('admin.posts.create');
+        $categories = Category::lists('name','id')->all();
+
+        return view('admin.posts.create',compact('categories'));
     }
     
 
